@@ -14,7 +14,6 @@ public class Main {
         int numbers = 0;
         String itog;
         String[] dr = input.split(" ");
-        StringBuilder sb = new StringBuilder(input);
 
         for (String s : dr) {
             if (s.equals("+") || s.equals("-") || s.equals("/") || s.equals("*")) {
@@ -27,7 +26,7 @@ public class Main {
             throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         } else if (numbers != 2) {
             throw new Exception(" //т.к. строка не является математической операцией");
-        } else if (Integer.parseInt(dr[0]) <= 1 || Integer.parseInt(dr[0]) > 10 || Integer.parseInt(dr[2]) <= 0 || Integer.parseInt(dr[2]) > 10) {
+        } else if (Integer.parseInt(dr[0]) < 1 || Integer.parseInt(dr[0]) > 10 || Integer.parseInt(dr[2]) < 1 || Integer.parseInt(dr[2]) > 10) {
             throw new Exception();
         } else {
             itog = switch (dr[1]) {
